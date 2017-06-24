@@ -1,0 +1,57 @@
+<!doctype html>
+<head>
+    <link rel="Stylesheet" href="ProStyler.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link rel="Stylesheet" href="Styler2.css" />
+    
+</head>
+<body>
+    <center>
+    <div class="loader" style="font-weight: 500" id="loaderSHIT">
+            Loading...
+            <br>
+    <img src = "heart.gif" height="40" />
+    <br>
+    Hold on! Do not press <strong>back</strong> or <strong>refresh</strong> button. This may take a while...
+        </div>
+        <div id="MessageDiv"></div>
+        <div id="MessageDiv2"></div>
+        <div id="MessageDiv3"></div>
+        </center>
+    <center>
+           <img src = "a.PNG" />
+<br>  <br>  
+<input type="password" id="passphrase" placeholder="The passphrase please..." class="loginBox" />
+<br>
+<input type="button" id="EnterBTN" value="ENTER" onclick="Enter()" />
+</center>
+   <script>
+
+ sessionStorage.Auth = "";
+                    
+
+  function Enter()
+      {
+                        $("#EnterBTN").css("color","#fff");
+          
+               if($("#passphrase").val().localeCompare("iwonttellthistoanyone")==0)
+                    {  
+                        $("#EnterBTN").css("background","green");
+                       $("#EnterBTN").val("SUCCESS! redirecting...");
+                        sessionStorage.Auth = "Y";
+                      setTimeout(function() {
+                        window.location.href = "index.html";
+                  }, 2000);
+                    }
+                    else 
+                    {
+ sessionStorage.Auth = "";
+                        $("#EnterBTN").css("background","red");
+
+                       $("#EnterBTN").val("FAILED");
+                    }   
+              }
+          
+      </script>
+</body>
+</html>

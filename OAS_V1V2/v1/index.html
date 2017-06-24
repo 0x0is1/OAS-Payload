@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>TIJAT</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="mendak.js"></script>
+<link rel="Stylesheet" href="Styler.css" />
+       <script>
+
+           
+ if(sessionStorage.Auth==undefined||sessionStorage.Auth!="Y")
+    window.location.href = "Blank.html";
+
+</script>
+    </head>
+    <body>
+       
+        <center>
+            <h1 style="font-weight:200;font-size: 8em;margin:0px;">OAS</h1>
+            <p class="uth">UNDER THE HOOD</p>
+
+       <input type="text" class="testname" id="TestName" placeholder="OAS Test ID"  autocomplete="true" autofocus/><br />
+      <!-- <small>cAsE dOEs NOt mAtTeRS</small> -->
+       <br /><br />
+<input type="button" class="butt" onclick="ikhor()" value="START" />
+</center>
+            <br>
+ <div class="loadering loaderings" style="font-weight: 500">
+            Loading...
+        </div>
+            <div id="appender" style="color:red;font-size:2em;">
+            </div>
+           
+            <section id="displayer" style="box-shadow:0px 1px 3px 2px rgba(0,0,0,0.1);min-height:50px;width: 90%;margin-left: 5%;padding: 20px;margin-bottom: 50px;">
+                <h1 style="text-align:center;">DISPLAYER</h1>
+                 <div id="inst" class="loaderings" style="display:none">
+            <center>
+            Capturing and unencrypting data. Hold on! This may take a while...
+            </center>
+            </div>
+            </section>
+            <div id="last" style="display:none">
+            <center>
+            OH YEAH hacks!
+            <br >
+            <br >
+            <br >
+            </center>
+            </div>
+    </body>
+</html>

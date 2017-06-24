@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Post Test</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="Stylesheet" href="Styler.css" />
+       <script>
+
+function doit()
+{
+
+            var LoginId = '12412';
+
+            var navigationURL = "/ResultAnalysis"
+
+            var DeviceDetails = "Google Chrome :: Desktop";
+
+     var LogObject = new Object();
+            LogObject.LoginName = LoginId;
+            LogObject.NavigationURL = navigationURL;
+            LogObject.DeviceDetails = DeviceDetails;
+console.log(JSON.stringify(LogObject));
+
+            $.ajax({
+                type: "Post",
+                contentType: "application/json; charset=utf-8",
+                url: "redirector.php?here=https://oas.lpu.in/api/OnlineExam/SaveLogDetails",
+                data: JSON.stringify(LogObject),
+                datatype: "json",
+                success: function (data1) {
+                    if (data1.d == undefined) {
+
+                    }
+                    else {
+                        data1 = data1.d;
+                    }
+                    if (data1.indexOf("Error") != -1) {
+                        //swal("Error", "An Error Has Occured.Please Try Again", "error");
+                        //console.log(data1);
+                    }
+                }, error: function (data) {
+                    //console.log(data.responseText);
+                }
+            });
+
+
+}
+function doit2()
+{
+    $.ajax({
+type: 'POST',
+url: 'tester.php',
+crossDomain: true,
+data: '{\"LoginName\":\"12412\",\"NavigationURL\":\"/ResultAnalysis\",\"DeviceDetails\":\"Google Chrome :: Desktop\"}',
+dataType: 'text',
+success: function(responseData, textStatus, jqXHR) {
+    //var value = responseData.someKey;
+    console.log(responseData+" "+textStatus+" ");
+},
+error: function (responseData, textStatus, errorThrown) {
+    alert('POST failed.'+errorThrown);
+}
+});
+}
+function doit3()
+{
+    $.getJSON('http://anyorigin.com/go?url=https%3A//oas.lpu.in/api/OnlineExam/SaveLogDetail&callback=?', function(data){
+	console.log(data.contents);
+});
+}
+function xsstest1()
+{
+var html = "<p>here is a test</p><strong>";
+
+var focus = window.location.href.substring(window.location.href.indexOf('?')+1);
+//$('#ed').after(putter);
+console.log(focus);
+}
+           </script>
+    </head>
+    <body>
+    ethe
+    <input type="button" onclick="xsstest1()" value="POST Test" />
+    <textarea id="tarea" ></textarea>
+    ethe result:
+<div id="ed"></div>
+    </body>
+    </html>

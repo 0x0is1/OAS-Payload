@@ -1,0 +1,33 @@
+.loader{
+    background-color: #0ff0ff;
+    max-width: 60%;
+    padding: 6px;
+    display: none;
+}
+div[id*=MessageDiv]{
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: #ffbf5f;
+    max-width: 60%;
+    display: block;
+    line-height: 30px;
+    margin: 2px;
+}
+.fader{
+    animation: ease-out fadein .5s;
+}
+@keyframes fadein
+{
+    0%{
+opacity: 0;
+    }
+    25%{
+opacity: 0.25;
+    }
+    50%{
+opacity: 0.5;
+    }
+    75%{
+opacity: 1;
+    }
+}
